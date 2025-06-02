@@ -28,16 +28,16 @@ steps:
 # and needs to run locally on the pipeline agent for Playwright to test it.
 # If TodoMVC app is deployed to a public URL (e.g., todomvc.com/examples/react),
 # can SKIP this entire "Start Web Application" task.
-- script: |
-    echo "Installing application dependencies and starting web app..."
-    # Navigate to the root of your TodoMVC React example
-    # Make sure in the correct directory where the app's package.json is located.
-    # In this case, it's inside examples/react/
-    cd examples/react/
-    npm install # Install the dependencies for the React app itself
-    npm start & # Start the React app in the background. '&' runs it in background.
-    sleep 10
-  displayName: 'Start Web Application'
+# - script: |
+#     echo "Installing application dependencies and starting web app..."
+#     # Navigate to the root of your TodoMVC React example
+#     # Make sure in the correct directory where the app's package.json is located.
+#     # In this case, it's inside examples/react/
+#     cd examples/react/
+#     npm install # Install the dependencies for the React app itself
+#     npm start & # Start the React app in the background. '&' runs it in background.
+#     sleep 10
+#   displayName: 'Start Web Application'
   # If app needs a specific working directory, define it here:
   # workingDirectory: 'examples/react' # This is an alternative to 'cd' inside script
 
