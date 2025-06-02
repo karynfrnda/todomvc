@@ -1,0 +1,71 @@
+# azure-pipelines.yml
+# Pipeline for running Playwright E2E tests
+
+# 1. Trigger: Define when this pipeline should run automatically.
+#    This pipeline will trigger on every push to the 'master' branch.
+trigger:
+  - master
+
+# 2. Agent Pool: Define the virtual machine (agent) where pipeline steps will run.
+#    'ubuntu-latest' is a common and good choice for Node.js/Playwright.
+pool:
+  vmImage: 'ubuntu-latest' # Use the latest Ubuntu Linux image
+
+# 3. Steps: Define the sequence of tasks or scripts to execute.
+steps:
+# Task 1: Checkout the source code from GitHub repository.
+# 'self' refers to the repository linked to this pipeline.
+- checkout: self
+
+# Task 2: Use a specific version of Node.js on the agent.
+# Playwright runs on Node.js, so this is essential.
+- task: UseNode@1
+  inputs:
+    version: '18.x' # Use a stable Node.js version (e.g., 18.x or 20.x).
+
+# Task 3: Install application dependencies and start the web application (if needed).
+# This step is CRUCIAL if TodoMVC app is not already deployed somewhere
+# and needs to run locally on the pipeline agent for Playwright to test it.
+# If TodoMVC app is deployed to a public URL (e.g., todomvc.com/examples/react),
+# can SKIP this entire "Start Web Application" task.
+- script: |
+    echo "Installing application dependencies and starting web app..."
+    # Navigate to the root of your TodoMVC React example
+    # Make sure in the correct directory where the app's package.json is located.
+    # In this case, it's inside examples/react/
+    cd examples/react/
+    npm install # Install the dependencies for the React app itself
+    npm start & # Start the React app in the background. '&' runs it in background.
+    sleep 10
+  displayName: 'Start Web Application'
+  # If app needs a specific working directory, define it here:
+  # workingDirectory: 'examples/react' # This is an alternative to 'cd' inside script
+
+# Task 4: Install Playwright dependencies and run tests.
+# This assumes Playwright setup (package.json, playwright.config.js) is inside examples/react/.
+- script: |
+    echo "Installing Playwright and running tests..."
+    cd examples/react/ # Navigate to the directory where Playwright is initialized
+    npm install # Install Playwright dependencies (from package.json)
+    npx playwright install --with-deps # Install Playwright browsers (Chromium, Firefox, WebKit) and their system dependencies
+    npx playwright test # Run the Playwright tests
+  displayName: 'Run Playwright Tests'
+  # Might need to set an environment variable if Playwright tests rely on BASE_URL
+  # env:
+  #   BASE_URL: 'http://localhost:8080/examples/react/' # Or whatever URL app runs on locally (or staging)
+
+# Task 5: (Optional but Recommended for POC) Publish test results.
+# Playwright can generate JUnit XML reports, which Azure DevOps can understand.
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/test-results.xml' # Playwright generates this by default with JUnit reporter
+    mergeResults: true
+    testRunTitle: 'Playwright UI Tests'
+
+# Task 6: (Optional) Publish Playwright's HTML report as an artifact.
+# This allows to download and view the detailed HTML report later.
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: 'examples/react/playwright-report' # Default location for Playwright HTML report
+    artifactName: 'PlaywrightHTMLReports'
