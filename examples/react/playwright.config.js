@@ -1,19 +1,12 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
-
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+// Gunakan 'require' untuk proyek JavaScript non-ESM
+const { defineConfig, devices } = require('@playwright/test');
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
-  testDir: './tests',
+module.exports = defineConfig({
+  testDir: './tests', // Lokasi default folder tes Playwright
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -24,15 +17,15 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['list'], // Ini akan menampilkan ringkasan di konsol pipeline
-    ['html'], // Ini akan tetap menghasilkan laporan HTML Playwright (yang sudah kamu publish sebagai artifact)
-    ['junit', { outputFile: 'test-results.xml' }] // Ini yang akan menghasilkan laporan JUnit XML
+    ['list'], // Menampilkan ringkasan tes di konsol (CLI)
+    ['html'], // Menghasilkan laporan HTML default Playwright
+    ['junit', { outputFile: 'test-results.xml' }], // Menghasilkan laporan JUnit XML untuk Azure DevOps 'Tests' tab
+    ['allure-playwright'] // Mengintegrasikan Allure Reporter
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
+    // Base URL aplikasi yang akan diuji. Ini yang sudah kamu ubah agar berhasil.
     baseURL: 'https://todomvc.com/examples/react/dist/',
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -43,12 +36,10 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
@@ -82,4 +73,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
