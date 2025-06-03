@@ -1,0 +1,152 @@
+<testsuites id="" name="" tests="72" failures="0" skipped="0" errors="0" time="44.770964">
+<testsuite name="example.spec.js" timestamp="2025-06-03T19:08:46.085Z" hostname="chromium" tests="24" failures="0" skipped="0" time="30.728" errors="0">
+<testcase name="New Todo › should allow me to add todo items" classname="example.spec.js" time="2.981">
+</testcase>
+<testcase name="New Todo › should clear text input field when an item is added" classname="example.spec.js" time="2.913">
+</testcase>
+<testcase name="New Todo › should append new items to the bottom of the list" classname="example.spec.js" time="3.042">
+</testcase>
+<testcase name="Mark all as completed › should allow me to mark all items as completed" classname="example.spec.js" time="3.132">
+</testcase>
+<testcase name="Mark all as completed › should allow me to clear the complete state of all items" classname="example.spec.js" time="0.92">
+</testcase>
+<testcase name="Mark all as completed › complete all checkbox should update state when items are completed / cleared" classname="example.spec.js" time="0.915">
+</testcase>
+<testcase name="Item › should allow me to mark items as complete" classname="example.spec.js" time="1.145">
+</testcase>
+<testcase name="Item › should allow me to un-mark items as complete" classname="example.spec.js" time="0.891">
+</testcase>
+<testcase name="Item › should allow me to edit an item" classname="example.spec.js" time="0.787">
+</testcase>
+<testcase name="Editing › should hide other controls when editing" classname="example.spec.js" time="0.764">
+</testcase>
+<testcase name="Editing › should save edits on blur" classname="example.spec.js" time="1.195">
+</testcase>
+<testcase name="Editing › should trim entered text" classname="example.spec.js" time="0.848">
+</testcase>
+<testcase name="Editing › should remove the item if an empty text string was entered" classname="example.spec.js" time="0.825">
+</testcase>
+<testcase name="Editing › should cancel edits on escape" classname="example.spec.js" time="0.783">
+</testcase>
+<testcase name="Counter › should display the current number of todo items" classname="example.spec.js" time="0.78">
+</testcase>
+<testcase name="Clear completed button › should display the correct text" classname="example.spec.js" time="1.431">
+</testcase>
+<testcase name="Clear completed button › should remove completed items when clicked" classname="example.spec.js" time="1.254">
+</testcase>
+<testcase name="Clear completed button › should be hidden when there are no items that are completed" classname="example.spec.js" time="0.842">
+</testcase>
+<testcase name="Persistence › should persist its data" classname="example.spec.js" time="1.172">
+</testcase>
+<testcase name="Routing › should allow me to display active items" classname="example.spec.js" time="0.847">
+</testcase>
+<testcase name="Routing › should respect the back button" classname="example.spec.js" time="0.832">
+</testcase>
+<testcase name="Routing › should allow me to display completed items" classname="example.spec.js" time="0.738">
+</testcase>
+<testcase name="Routing › should allow me to display all items" classname="example.spec.js" time="0.877">
+</testcase>
+<testcase name="Routing › should highlight the currently applied filter" classname="example.spec.js" time="0.814">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.js" timestamp="2025-06-03T19:08:46.085Z" hostname="firefox" tests="24" failures="0" skipped="0" time="71.259" errors="0">
+<testcase name="New Todo › should allow me to add todo items" classname="example.spec.js" time="4.738">
+</testcase>
+<testcase name="New Todo › should clear text input field when an item is added" classname="example.spec.js" time="3.569">
+</testcase>
+<testcase name="New Todo › should append new items to the bottom of the list" classname="example.spec.js" time="3.827">
+</testcase>
+<testcase name="Mark all as completed › should allow me to mark all items as completed" classname="example.spec.js" time="5.443">
+</testcase>
+<testcase name="Mark all as completed › should allow me to clear the complete state of all items" classname="example.spec.js" time="3.495">
+</testcase>
+<testcase name="Mark all as completed › complete all checkbox should update state when items are completed / cleared" classname="example.spec.js" time="3.651">
+</testcase>
+<testcase name="Item › should allow me to mark items as complete" classname="example.spec.js" time="2.945">
+</testcase>
+<testcase name="Item › should allow me to un-mark items as complete" classname="example.spec.js" time="2.932">
+</testcase>
+<testcase name="Item › should allow me to edit an item" classname="example.spec.js" time="3.23">
+</testcase>
+<testcase name="Editing › should hide other controls when editing" classname="example.spec.js" time="2.433">
+</testcase>
+<testcase name="Editing › should save edits on blur" classname="example.spec.js" time="2.452">
+</testcase>
+<testcase name="Editing › should trim entered text" classname="example.spec.js" time="2.554">
+</testcase>
+<testcase name="Editing › should remove the item if an empty text string was entered" classname="example.spec.js" time="1.908">
+</testcase>
+<testcase name="Editing › should cancel edits on escape" classname="example.spec.js" time="3.571">
+</testcase>
+<testcase name="Counter › should display the current number of todo items" classname="example.spec.js" time="1.901">
+</testcase>
+<testcase name="Clear completed button › should display the correct text" classname="example.spec.js" time="2.514">
+</testcase>
+<testcase name="Clear completed button › should remove completed items when clicked" classname="example.spec.js" time="2.629">
+</testcase>
+<testcase name="Clear completed button › should be hidden when there are no items that are completed" classname="example.spec.js" time="2.924">
+</testcase>
+<testcase name="Persistence › should persist its data" classname="example.spec.js" time="3.346">
+</testcase>
+<testcase name="Routing › should allow me to display active items" classname="example.spec.js" time="2.489">
+</testcase>
+<testcase name="Routing › should respect the back button" classname="example.spec.js" time="2.904">
+</testcase>
+<testcase name="Routing › should allow me to display completed items" classname="example.spec.js" time="2.136">
+</testcase>
+<testcase name="Routing › should allow me to display all items" classname="example.spec.js" time="1.941">
+</testcase>
+<testcase name="Routing › should highlight the currently applied filter" classname="example.spec.js" time="1.727">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.js" timestamp="2025-06-03T19:08:46.085Z" hostname="webkit" tests="24" failures="0" skipped="0" time="36.251" errors="0">
+<testcase name="New Todo › should allow me to add todo items" classname="example.spec.js" time="3.352">
+</testcase>
+<testcase name="New Todo › should clear text input field when an item is added" classname="example.spec.js" time="3.159">
+</testcase>
+<testcase name="New Todo › should append new items to the bottom of the list" classname="example.spec.js" time="3.552">
+</testcase>
+<testcase name="Mark all as completed › should allow me to mark all items as completed" classname="example.spec.js" time="3.652">
+</testcase>
+<testcase name="Mark all as completed › should allow me to clear the complete state of all items" classname="example.spec.js" time="1.119">
+</testcase>
+<testcase name="Mark all as completed › complete all checkbox should update state when items are completed / cleared" classname="example.spec.js" time="1.407">
+</testcase>
+<testcase name="Item › should allow me to mark items as complete" classname="example.spec.js" time="1.32">
+</testcase>
+<testcase name="Item › should allow me to un-mark items as complete" classname="example.spec.js" time="1.247">
+</testcase>
+<testcase name="Item › should allow me to edit an item" classname="example.spec.js" time="1.445">
+</testcase>
+<testcase name="Editing › should hide other controls when editing" classname="example.spec.js" time="0.921">
+</testcase>
+<testcase name="Editing › should save edits on blur" classname="example.spec.js" time="1.388">
+</testcase>
+<testcase name="Editing › should trim entered text" classname="example.spec.js" time="1.114">
+</testcase>
+<testcase name="Editing › should remove the item if an empty text string was entered" classname="example.spec.js" time="0.95">
+</testcase>
+<testcase name="Editing › should cancel edits on escape" classname="example.spec.js" time="0.897">
+</testcase>
+<testcase name="Counter › should display the current number of todo items" classname="example.spec.js" time="0.828">
+</testcase>
+<testcase name="Clear completed button › should display the correct text" classname="example.spec.js" time="0.934">
+</testcase>
+<testcase name="Clear completed button › should remove completed items when clicked" classname="example.spec.js" time="0.897">
+</testcase>
+<testcase name="Clear completed button › should be hidden when there are no items that are completed" classname="example.spec.js" time="0.921">
+</testcase>
+<testcase name="Persistence › should persist its data" classname="example.spec.js" time="1.016">
+</testcase>
+<testcase name="Routing › should allow me to display active items" classname="example.spec.js" time="1.011">
+</testcase>
+<testcase name="Routing › should respect the back button" classname="example.spec.js" time="1.465">
+</testcase>
+<testcase name="Routing › should allow me to display completed items" classname="example.spec.js" time="1.193">
+</testcase>
+<testcase name="Routing › should allow me to display all items" classname="example.spec.js" time="1.213">
+</testcase>
+<testcase name="Routing › should highlight the currently applied filter" classname="example.spec.js" time="1.25">
+</testcase>
+</testsuite>
+</testsuites>
